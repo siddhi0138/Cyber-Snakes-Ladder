@@ -1,11 +1,3 @@
-Got it — you want your **Cyber Snakes & Ladders README** written in the **exact same style, formatting, structure, and flow** as your **Cyber Chess README** above.
-
-Same headings, same emojis, same table style, same screenshot section, same layout, same spacing — a **1:1 style match**, but with your Snakes & Ladders game content.
-
-Here it is — **perfectly recreated in that format** and fully ready for GitHub.
-
----
-
 # 🐍 **Cyber Snakes & Ladders – Learn Cybersecurity Through a Classic Game**
 
 A gamified learning experience where **each snake represents a real cybersecurity exploit** and **each ladder represents a security defense**.
@@ -248,4 +240,5 @@ Some requested features:
 * More vulnerabilities & defenses
 
 ---
+
 
