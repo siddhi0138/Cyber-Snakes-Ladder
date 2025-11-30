@@ -39,7 +39,7 @@ export default function Intro({ playersConfig, setPlayersConfig, onStart }) {
         i === idx
           ? {
               ...p,
-              name: value || p.name,
+              name: value,
             }
           : p
       );
