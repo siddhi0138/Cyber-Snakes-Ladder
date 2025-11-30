@@ -1,30 +1,34 @@
 import React from 'react'
 import { snakeDetails, ladderDetails } from '../data/exploits'
 
-export default function InfoPanel({ lastEvent, currentPlayerName }) {
+export default function InfoPanel({ lastEvent }) {
   let title = 'Welcome to Cyber Snakes & Ladders'
   let body =
     'Roll the dice, move across the board, and click any snake or ladder icon to read a short briefing on that attack or defense.'
+
+  const playerName = lastEvent?.player?.name || 'Player';
 
   if (lastEvent?.type === 'snake') {
     const info = snakeDetails[lastEvent.square]
     if (info) {
       title = `Snake: ${info.title}`
-      body = `${info.summary} This was triggered when ${currentPlayerName} landed on square ${lastEvent.square}.`
+      body = `${info.summary} This was triggered when ${playerName} landed on square ${lastEvent.square}.`
     }
   } else if (lastEvent?.type === 'ladder') {
     const info = ladderDetails[lastEvent.square]
     if (info) {
       title = `Ladder: ${info.title}`
-      body = `${info.summary} ${currentPlayerName} climbed from ${lastEvent.from} to ${lastEvent.to}.`
+      body = `${info.summary} ${playerName} climbed from ${lastEvent.from} to ${lastEvent.to}.`
     }
   } else if (lastEvent?.type === 'move') {
     title = 'Player moved'
-    body = `${currentPlayerName} moved to square ${lastEvent.to}.`
+    body = `${playerName} moved to square ${lastEvent.to}.`
+  } else if (lastEvent?.type === 'stuck') {
+    title = 'Still at the start!'
+    body = `${playerName} rolled a ${lastEvent.roll}. You need to roll a 6 to start the game.`
   } else if (lastEvent?.type === 'start') {
     title = 'New Game'
-    body =
-      'All players start at square 1. First to reach square 100 wins. Landing on a snake shows you a real exploit; landing on a ladder shows a real defense.'
+    body = 'All players start off the board. You must roll a 6 to begin moving. The first player to reach square 100 wins!'
   }
 
   return (

@@ -20,7 +20,7 @@ export default function Intro({ playersConfig, setPlayersConfig, onStart }) {
         const idx = nextPlayers.length;
         nextPlayers.push({
           id: idx + 1,
-          position: 1,
+          position: 0, // All players start at position 0
           ...defaults[idx],
         });
       }

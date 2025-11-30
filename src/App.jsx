@@ -6,7 +6,7 @@ import Popup from './components/Popup.jsx'
 import Dice from './components/Dice.jsx'
 import { snakes, ladders, snakeDetails, ladderDetails } from './data/exploits'
 
-const START_POS = 1
+const START_POS = 1 // Players start on square 1
 const END_POS = 100
 
 const defaultPlayers = [
@@ -80,11 +80,29 @@ export default function App() {
       const currentIndex = turn % updated.length
       const current = { ...updated[currentIndex] }
 
+      // Rule: Must roll a 6 to start
+      if (current.position === START_POS && !current.hasMoved && roll !== 6) {
+        setLastEvent({
+          type: 'stuck',
+          roll,
+          player: current,
+        })
+        // Don't advance turn if player rolls a 6, they get to go again
+        if (roll !== 6) {
+          setTimeout(() => {
+            setTurn((t) => (t + 1) % updated.length)
+          }, 150)
+        }
+        return prev // No position change
+      }
+
+      current.hasMoved = true; // Mark player as having moved
       let target = current.position + roll
 
       if (target > END_POS) {
         setLastEvent({
           type: 'move',
+          player: current,
           from: current.position,
           to: current.position,
           roll
@@ -143,6 +161,7 @@ export default function App() {
         from: prev[currentIndex].position,
         to: target,
         roll,
+        player: current, // *** FIX: Pass the current player with the event ***
         square: triggerSquare
       })
 
@@ -168,9 +187,10 @@ export default function App() {
           fix: 'Use what you learned from each card to design better defenses in your own projects.'
         }))
       } else {
-        setTimeout(() => {
+        // Rule: Roll again on a 6
+        if (roll !== 6) {
           setTurn((t) => (t + 1) % updated.length)
-        }, 150)
+        }
       }
 
       return updated
@@ -205,7 +225,7 @@ export default function App() {
 
   return (
     <>
-      <audio id="bgm-audio" src="/sounds/bgm.mp3" loop style={{ display: 'none' }} />
+      <audio id="bgm-audio" src="/sounds/background-music.mp3" loop style={{ display: 'none' }} />
 
       {screen === 'intro' ? (
         <Intro
@@ -247,7 +267,7 @@ export default function App() {
           <main className="layout">
             <Board players={players} onSquareClick={handleSquareClick} highlight={highlight} />
             <section className="right-column">
-              <InfoPanel lastEvent={lastEvent} currentPlayerName={currentPlayer?.name} />
+              <InfoPanel lastEvent={lastEvent} />
               <section className="panel panel-controls">
                 <h2>🎲 Turn & Dice</h2>
                 <p>
