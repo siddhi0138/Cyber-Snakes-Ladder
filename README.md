@@ -149,37 +149,33 @@ Drop your `/dist` folder on:
 
 🧩 **Intro Screen – Setup, Rules & Concepts**
 
-(Add your screenshots below)
-
-```
-<img ... />
-<img ... />
-```
+<img width="1915" height="895" alt="image" src="https://github.com/user-attachments/assets/e66dfa46-acd6-4113-aafe-7c5b6420f25a" />
 
 Explains how to play, player setup, cybersecurity mapping.
 
 🎲 **Gameplay – Dice, Movement, Snakes, Ladders**
 
-```
-<img ... />
-<img ... />
-```
+<img width="1917" height="879" alt="image" src="https://github.com/user-attachments/assets/cbd87bc7-0efb-4c13-8f80-9ddd19bea969" />
+
+<img width="1908" height="884" alt="image" src="https://github.com/user-attachments/assets/acfaaddf-1876-4866-9ad4-c6d8a697e31b" />
+
+<img width="1919" height="904" alt="image" src="https://github.com/user-attachments/assets/157cef36-ee9d-43d9-aea5-a949497d92c5" />
 
 Shows the board, players, token movement and event triggers.
 
 ⚠️ **Exploit Popup – Snakes**
 
-```
-<img ... />
-```
+<img width="1919" height="894" alt="image" src="https://github.com/user-attachments/assets/23dc3112-d8d3-4e5d-bf0e-bfcbab49d739" />
+
+<img width="1917" height="895" alt="image" src="https://github.com/user-attachments/assets/6c30f3f7-73ea-4cb9-b2cd-f8bde2b70c15" />
 
 Displays exploit explanation, impact, and mitigation.
 
 🛡️ **Defense Popup – Ladders**
 
-```
-<img ... />
-```
+<img width="1919" height="895" alt="image" src="https://github.com/user-attachments/assets/135f09de-9e1f-4a97-84db-c5e6f14a63df" />
+
+<img width="1919" height="901" alt="image" src="https://github.com/user-attachments/assets/71c3caae-7659-4b1d-8662-77a7fd479602" />
 
 Shows why the defense matters and where it’s used.
 
@@ -208,22 +204,22 @@ Shows why the defense matters and where it’s used.
 
 ### 🐍 Exploits (Snakes)
 
-* SQL Injection
-* Cross-Site Scripting
-* Credential Stuffing
-* Man-in-the-Middle
-* Remote Code Execution
-* Privilege Escalation
-* Supply Chain Attacks
+* SQL Injection – Injecting malicious queries into databases to manipulate or extract data.
+* Cross-Site Scripting (XSS) – Injecting harmful scripts into web pages that execute in victims’ browsers.
+* Credential Stuffing – Using leaked username–password pairs to break into user accounts.
+* Man-in-the-Middle (MitM) – Intercepting and altering communication between two connected parties.
+* Remote Code Execution (RCE) – Exploiting a flaw to run arbitrary code on a remote system.
+* Privilege Escalation – Gaining unauthorized higher-level access, often becoming admin/root.
+* Supply Chain Attack – Compromising third-party software or dependencies to infiltrate targets.
 
 ### 🪜 Defenses (Ladders)
 
-* MFA
-* Input Validation
-* Encoding
-* Network Segmentation
-* Monitoring & Logging
-* Zero Trust Architecture
+* Multi-Factor Authentication (MFA) – Adds a second verification layer, keeping accounts safe even if passwords leak.
+* Input Validation – Ensures only safe and expected data is processed, blocking malicious payloads.
+* Encoding & Sanitization – Converts or cleans user input to prevent scripts and injections from executing.
+* Network Segmentation – Splits networks into zones so attackers can’t freely move laterally.
+* Monitoring & Logging – Tracks system activity to quickly detect, investigate, and stop attacks.
+* Zero Trust Architecture – Never trusts any device or user by default; verifies every request continuously.
 
 ---
 
