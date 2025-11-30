@@ -149,21 +149,19 @@ Drop your `/dist` folder on:
 
 🧩 **Intro Screen – Setup, Rules & Concepts**
 
-(Add your screenshots below)
-
-```
-<img ... />
-<img ... />
-```
+<img width="1918" height="901" alt="image" src="https://github.com/user-attachments/assets/e3165b3d-8b51-43e4-800f-55cd74b88cd7" />
 
 Explains how to play, player setup, cybersecurity mapping.
 
 🎲 **Gameplay – Dice, Movement, Snakes, Ladders**
 
-```
-<img ... />
-<img ... />
-```
+<img width="1897" height="893" alt="image" src="https://github.com/user-attachments/assets/caf6fcb7-4f4a-4b4d-a918-172df80b8e52" />
+
+<img width="1919" height="903" alt="image" src="https://github.com/user-attachments/assets/53ab6f74-e680-40cb-aa8f-76cccbf05be2" />
+
+<img width="1902" height="913" alt="image" src="https://github.com/user-attachments/assets/190f20a0-f77d-4939-bf71-89bfc11e103a" />
+
+<img width="1917" height="899" alt="image" src="https://github.com/user-attachments/assets/2a255e37-4cd3-4f21-8ec1-13252226cba7" />
 
 Shows the board, players, token movement and event triggers.
 
@@ -240,5 +238,6 @@ Some requested features:
 * More vulnerabilities & defenses
 
 ---
+
 
 
